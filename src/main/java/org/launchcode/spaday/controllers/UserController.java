@@ -24,7 +24,10 @@ public class UserController {
             model.addAttribute("username", user.getUsername());
             return "user/index";
         } else {
-        return "user/add";
+            model.addAttribute("error", "Passwords must match");
+            model.addAttribute("username", user.getUsername());
+            model.addAttribute("email", user.getEmail());
+            return "user/add";
         }
     }
 }
