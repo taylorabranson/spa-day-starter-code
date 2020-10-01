@@ -7,5 +7,13 @@
 <h1 th:text="'Welcome, ' + ${username} + '!'"></h1>
 <a th:href="@{/}">Service Selection</a>
 
+<ol><h2>Users</h2>
+
+    <li th:each="user : ${users}">
+        <a th:href="@{/user/detail/{id}/(id=${user.id})}" th:text="${user.username} + ${user.id}"></a>
+    </li>
+
+</ol>
+
 </body>
 </html>
