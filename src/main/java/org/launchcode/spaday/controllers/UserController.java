@@ -35,6 +35,7 @@ public class UserController {
     public String displayUserDetail(@PathVariable int id, Model model) {
         model.addAttribute("username", UserData.getById(id).getUsername());
         model.addAttribute("email", UserData.getById(id).getEmail());
+        model.addAttribute("dateJoined", UserData.getById(id).getDate());
         return "user/detail";
     }
 }
